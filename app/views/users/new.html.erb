@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'user/new', :media => "all"  %>
+
+<body>
+  <%= @t %>
+  <div id="header">header</div>
+  <div id="main">
+    <div id="form_head"><span class="rogo">Slatter</span>へようこそ</div>
+    <div id="form_area">
+      <div id='error_message'></div>
+      <%= form_for :@user, url: users_path do |f| %>
+        <ul>
+          <li>ユーザー名<%= f.text_field :name, :class => 'form_text_field',:maxlength => '9'  %></li>
+          <li>メールアドレス<%= f.text_field :mealadless, :class => 'form_text_field',:maxlength => '9' %></li>
+          <li>パスワード<%= f.password_field :password, :class => 'form_text_field',:maxlength => '16' %></li>
+          <li>確認パスワード<%= f.password_field :confilmpassword, :class => 'form_text_field',:maxlength => '16'%></li>
+        </ul>
+      <div id='form_submit'><%= f.submit 'Create' %></div> 
+      <% end %>
+    </div>
+  </div>
+</body>

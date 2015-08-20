@@ -1,0 +1,31 @@
+  <%= stylesheet_link_tag "user/login", :media => "all" %>
+<body>
+  <%= @t %>
+  <div id="main">
+    <div>WelCome</div>
+    <div id="rogo">
+      Slatter
+    </div>
+    <div id="login_error"><p class="login_error_p">ユーザーネームかパスワードが違います</p></div>
+  	<div id="login_area">
+  	  <div id="login_form">
+  	    <div id="login_input">
+          <%= form_for :user, url: '/login' do |f| %>
+            UserName: <br>
+            <%= f.text_field :name, :class => 'form_text_field',:maxlength => '16'  %><br>
+            Password:<br>
+            <%= f.password_field :password, :class => 'form_text_field',:maxlength => '16' %><br>
+            <div id="login_button"><%= f.submit 'ログイン' %></div>
+          <% end %>
+          <div id="login_new">
+            <%= link_to 'new user?', controller: 'users', action: 'new' %>
+          </div>
+        </div>
+	  </div>
+	    Login with twitter
+      Login with facebook
+    </div>
+  </div>
+
+</body>
+ 
